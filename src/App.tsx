@@ -1,8 +1,8 @@
 import { registerRootComponent } from "expo";
-import RootStackNavigator from "./navigations/RootStackNavigator";
+import RootStack from "./navigations/RootStack";
 
 export default function App() {
-  return <RootStackNavigator />;
+  return <RootStack />;
 }
 
 registerRootComponent(App);
