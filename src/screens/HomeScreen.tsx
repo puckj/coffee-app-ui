@@ -11,7 +11,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { themeColors } from "../theme";
-import { categories } from "../constants";
+import { categories, coffeeItems } from "../constants";
+import Carousel from "react-native-snap-carousel";
+import CoffeeCard from "../components/CoffeeCard";
 
 const HomeScreen = () => {
   const [activeCategory, setActiveCategory] = useState(1);
@@ -83,6 +85,19 @@ const HomeScreen = () => {
         </View>
 
         {/* Coffee cards */}
+        <View className="mt-16 py-2">
+          <Carousel
+            containerCustomStyle={{ overflow: "visible" }}
+            data={coffeeItems}
+            renderItem={({ item }) => <CoffeeCard item={item} />}
+            firstItem={1}
+            inactiveSlideOpacity={0.75}
+            inactiveSlideScale={0.77}
+            sliderWidth={400}
+            itemWidth={260}
+            slideStyle={{ display: "flex", alignItems: "center" }}
+          />
+        </View>
       </SafeAreaView>
     </View>
   );
