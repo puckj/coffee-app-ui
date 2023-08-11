@@ -22,6 +22,8 @@ export const categories = [
   },
 ];
 
+export const size = ["Small", "Medium", "Large"];
+
 export const coffeeItems = [
   {
     id: 1,
