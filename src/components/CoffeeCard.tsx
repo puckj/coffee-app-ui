@@ -2,8 +2,11 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { themeColors } from "../theme";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { RootStackNavigationProp } from "../navigations/types";
 
 const CoffeeCard = ({ item }) => {
+  const navigation = useNavigation<RootStackNavigationProp>();
   return (
     <View
       style={{
@@ -57,6 +60,7 @@ const CoffeeCard = ({ item }) => {
         >
           <Text className="text-white font-bold text-lg">$ {item.price}</Text>
           <TouchableOpacity
+            onPress={() => navigation.navigate("ProductScreen", { ...item })}
             style={{
               shadowColor: "black",
               shadowRadius: 40,
